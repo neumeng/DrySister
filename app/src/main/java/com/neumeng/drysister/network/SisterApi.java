@@ -1,6 +1,8 @@
-package com.neumeng.drysister;
+package com.neumeng.drysister.network;
 
 import android.util.Log;
+
+import com.neumeng.drysister.bean.entity.Sister;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -64,7 +66,7 @@ public class SisterApi {
             sister.setSource(results.getString("source"));
             sister.setType(results.getString("type"));
             sister.setUrl(results.getString("url"));
-            sister.setUsed(results.getBoolean("used"));
+            sister.setUsed(results.getBoolean("used") ? 1 : 0);
             sister.setWho(results.getString("who"));
             sisters.add(sister);
         }
@@ -84,5 +86,6 @@ public class SisterApi {
         inputStream.close();
         return outputStream.toByteArray();
     }
+
 
 }

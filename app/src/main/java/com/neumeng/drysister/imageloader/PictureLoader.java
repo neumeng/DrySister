@@ -1,4 +1,4 @@
-package com.neumeng.drysister;
+package com.neumeng.drysister.imageloader;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
