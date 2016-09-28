@@ -1,1 +1,1 @@
-"# DrySister" 
+# DrySister

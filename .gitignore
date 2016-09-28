@@ -47,3 +47,5 @@ local.properties
 
 # Log Files
 *.log
+app/libs/
+app/src/main/res/drawable/
