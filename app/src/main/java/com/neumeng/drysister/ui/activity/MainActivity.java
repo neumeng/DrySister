@@ -69,19 +69,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (curPos == data.size() - 1) {
                     sisterTask = new SisterTask();
                     sisterTask.execute();
-                } else if(curPos < data.size()) {
+                } else if (curPos < data.size()) {
                     mLoader.bindBitmap(data.get(curPos).getUrl(), showImg, 400, 400);
                 }
                 break;
             case R.id.btn_next:
                 previousBtn.setVisibility(View.VISIBLE);
-                if(curPos < data.size()) {
+                if (curPos < data.size()) {
                     ++curPos;
                 }
                 if (curPos > data.size() - 1) {
                     sisterTask = new SisterTask();
                     sisterTask.execute();
-                } else if(curPos < data.size()){
+                } else if (curPos < data.size()) {
                     mLoader.bindBitmap(data.get(curPos).getUrl(), showImg, 400, 400);
                 }
                 break;
@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if (NetworkUtils.isAvailable(getApplicationContext())) {
                 result = sisterApi.fetchSister(10, page);
                 //查询数据库里有多少个妹子，避免重复插入
-                if(mDbHelper.getSistersCount() / 10 < page) {
+                if (mDbHelper.getSistersCount() / 10 < page) {
                     mDbHelper.insertSisters(result);
                 }
             } else {
